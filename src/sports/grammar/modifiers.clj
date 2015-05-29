@@ -4,8 +4,6 @@
 ;;;; a large crowd". The private functions in this namespace are NOT guaranteed
 ;;;; to conform to those rules.
 
-;; TODO: should actually only expose some-modifiers
-
 (ns sports.grammar.modifiers
   (:require [robots.grammar.generative :refer [terminate]]
             [clojure.data.generators :refer [weighted]]))
@@ -35,13 +33,13 @@
                   on-location 2})))
 
 
-;; audience
+   ;; audience
 
    (fn []
      (rand-nth ["before a judge" "with a large crowd" "with a small crowd"]))
 
 
-;; time of year
+   ;; time of year
 
    (fn []
      (str "during "
