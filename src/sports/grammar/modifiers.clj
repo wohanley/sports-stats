@@ -1,8 +1,7 @@
-;;;; Functions that generate modifiers for a statistic. These are phrases that
+;;;; Generate modifiers for a statistic. These are phrases that
 ;;;; a) change the scope of a cited statistic and b) can be formed into
 ;;;; arbitrarily long chains, e.g. "in Halifax, on top of tall buildings, with
-;;;; a large crowd". The private functions in this namespace are NOT guaranteed
-;;;; to conform to those rules.
+;;;; a large crowd".
 
 (ns sports.grammar.modifiers
   (:require [robots.grammar.generative :refer [terminate]]
