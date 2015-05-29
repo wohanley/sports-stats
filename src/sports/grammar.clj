@@ -17,7 +17,7 @@
 
 (defn- qualitative-performance []
   (let [verb #(rand-nth ["have" "get" "score"])
-        comparison #(rand-nth ["nicer" "better" "worse"])
+        comparison #(weighted {"nicer" 0.3 "better" 1 "worse" 1})
         quality #(rand-nth ["batting average" "sportsmanship"
                             "power play percentage" "penalty killing" "running"
                             "focus"])]
@@ -36,5 +36,3 @@
 (defn start []
   (rand-nth [[team " " performance-aspect " " some-modifiers]
              [some-modifiers ", " team " " performance-aspect]]))
-
-
