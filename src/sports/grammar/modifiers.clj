@@ -9,6 +9,9 @@
 
 
 (def modifiers
+  "Grammars that produce modifiers. Functions generally produce one of some set
+  of modifiers that are mutually exclusive, while modifiers that aren't mutually
+  exclusive with any others are simply listed."
   
   ;; venue
   
@@ -31,22 +34,90 @@
                   in-location 2
                   on-location 2})))
 
+   "on astroturf"
+   "on ley lines"
+   "underground"
+   "under retractable roofs"
+
+
+   ;; players
+
+   "after hearing a motivational speaker"
+   "on leg day"
+   "when it's more than one player's birthday"
+   "if players missed their naps"
+   "after group therapy sessions"
+
+
+   ;; clothes
+
+   (fn [] (rand-nth ["in new uniforms" "in old uniforms" "in dirty uniforms"
+                     "in clean uniforms" "in starched uniforms"]))
+
+   "wearing wool socks"
+
 
    ;; audience
 
    (fn []
-     (rand-nth ["before a judge" "with a large crowd" "with a small crowd"]))
+     (rand-nth ["before a large crowd" "before a small crowd"
+                "before a rowdy crowd" "in loud buildings"
+                "in quiet buildings"]))
 
+   "with world leaders attending"
+   "with the pope watching"
 
+   
    ;; time of year
 
    (fn []
      (str "during "
-          (rand-nth ["spring" "summer" "fall" "autumn" "winter" "holidays"])))])
+          (rand-nth ["spring" "summer" "fall" "autumn" "winter" "holidays"])))
+
+
+   ;; elevation
+
+   (fn []
+     (let [height-unit #(rand-nth ["feet" "inches" "meters" "yards"
+                                   "centimeters"])
+           height #(str (rand-int 5000) " " (height-unit))]
+       (str (rand-nth ["above " "below "]) (height))))
+
+   
+   ;; weather
+
+   (fn []
+     (rand-nth ["during rain" "when it's sunny" "under clouds" "on windy days"
+                "on calm days" "in fog" "when it's wet but not raining"
+                "with rainbows visible"]))
+   
+   
+   ;; biome
+
+   (fn []
+     (str "in "
+          (rand-nth ["subtropical climates" "tundra" "nemoral climates"
+                     "prairies" "deserts" "swamps" "mangrove forests"
+                     "flood plains" "rainforests" "coniferous forests"])))
+
+
+   ;; region
+
+   (fn []
+     (rand-nth ["along the equator" "in the Arctic" "in North America"
+                "in Europe" "in South America" "in Africa" "in Asia"
+                "in Oceania" "in the Western Hemisphere"
+                "in the Eastern hemisphere" "in the Northern Hemisphere"
+                "in the Southern Hemisphere" "in the Mediterranean"]))
+
+   
+   ;; idk
+
+   "when patting each other's butts regularly"])
 
 
 (defn some-modifiers []
-  (clojure.string/join ", "
+  (clojure.string/join " "
                        (terminate (take
                                    (+ (rand-int 5) 1)
                                    (shuffle modifiers)))))
