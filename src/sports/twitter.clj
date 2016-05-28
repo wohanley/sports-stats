@@ -10,7 +10,7 @@
                           (:env "ACCESS_TOKEN")
                           (:env "ACCESS_TOKEN_SECRET")))
 
-(defn main
+(defn -main []
   (loop []
     (rest/statuses-update :oauth-creds creds
                           :params {:status (terminate (grammar/start))})
