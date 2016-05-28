@@ -1,5 +1,6 @@
 (ns sports.grammar
-  (:require [sports.grammar.modifiers :refer [some-modifiers]]))
+  (:require [sports.grammar.modifiers :refer [some-modifiers]]
+            [clojure.data.generators :refer [weighted]]))
 
 
 (defn- magnitude []

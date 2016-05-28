@@ -44,9 +44,15 @@
 
    "after hearing a motivational speaker"
    "on leg day"
+   "on arms day"
    "when it's more than one player's birthday"
    "if players missed their naps"
    "after group therapy sessions"
+   "if the players hadn't had their cuddles"
+   "when more than two wives are pregnant"
+   "when someone's kids are teething"
+   "after a presser"
+   
 
 
    ;; clothes
@@ -55,24 +61,31 @@
                      "in clean uniforms" "in starched uniforms"]))
 
    "wearing wool socks"
-
-
+   "wearing lace panties"
+   "thinking sexually suggestive thoughts"
+   "not wearing underwear"
+   
+   
    ;; audience
 
    (fn []
      (rand-nth ["before a large crowd" "before a small crowd"
                 "before a rowdy crowd" "in loud buildings"
-                "in quiet buildings"]))
+                "in quiet buildings""in Michael's arts and crafts superstore"
+                "when only their mothers are looking"
+                ]))
 
    "with world leaders attending"
    "with the pope watching"
+   "with beyonce in attendance"
 
    
    ;; time of year
 
    (fn []
      (str "during "
-          (rand-nth ["spring" "summer" "fall" "autumn" "winter" "holidays"])))
+          (rand-nth ["spring" "summer" "fall" "autumn" "winter" "holidays"
+                     "ramadan" ])))
 
 
    ;; elevation
@@ -89,7 +102,9 @@
    (fn []
      (rand-nth ["during rain" "when it's sunny" "under clouds" "on windy days"
                 "on calm days" "in fog" "when it's wet but not raining"
-                "with rainbows visible"]))
+                "with rainbows visible""when it's humid"
+                "when you've caught a chill"
+                "when the weather keeps changing its mind" ]))
    
    
    ;; biome
@@ -108,7 +123,8 @@
                 "in Europe" "in South America" "in Africa" "in Asia"
                 "in Oceania" "in the Western Hemisphere"
                 "in the Eastern hemisphere" "in the Northern Hemisphere"
-                "in the Southern Hemisphere" "in the Mediterranean"]))
+                "in the Southern Hemisphere" "in the Mediterranean" "in space"
+                "on the moon" "standing in the ocean"   ]))
 
    
    ;; idk
